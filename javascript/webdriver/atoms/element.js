@@ -279,3 +279,17 @@ map[key.F11] = botKey.F11;
 map[key.F12] = botKey.F12;
 map[key.META] = botKey.META;
 });  // goog.scope
+
+goog.provide('webdriver.atoms.element.isDisplayed');
+goog.require('bot.dom');
+
+/**
+ * Returns whether an element is displayed.
+ *
+ * @param {!Element} element The element to check.
+ * @return {boolean} Whether the element is displayed.
+ */
+webdriver.atoms.element.isDisplayed = function(element) {
+  // Check if the element is displayed on the page
+  return bot.dom.isShown(element);
+};
